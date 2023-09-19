@@ -2,7 +2,6 @@ export default class Goblin {
   constructor(gameElement) {
     this.cells = gameElement.querySelectorAll('.cage');
     this.goblinHead = gameElement.querySelector('.head');
-
   }
 
   rotate() {
@@ -11,11 +10,10 @@ export default class Goblin {
 
     setInterval(() => {
       while (rand === previous) {
-        rand = Math.floor(Math.random() * (this.cells.length -1));
+        rand = Math.floor(Math.random() * (this.cells.length - 1));
       }
       previous = rand;
       this.cells[rand].appendChild(this.goblinHead);
-
     }, 1000);
   }
 }
